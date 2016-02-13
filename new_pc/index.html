@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HACKPKU 2016 - Come and make history with us.">
+    <meta name="author" content="">
+    
+    <title>treehacks 2016</title>
+    
+    <!-- Bootstrap -->
+    <link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../resources/img/favicon.png">
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="../lib/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../lib/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="../lib/js/jquery.easing.min.js"></script>
+    
+    <link href="common.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="p1">
+    <div class="header">
+    <div class="header-section" style="margin-left:20%;">
+        <h1>Project X</h1>
+        <hr style="margin:20px 0%;"class="section-hr"/>
+        <h3>by a,b,c and d</h3>
+    </div>
+  
+    <div class="footer" style="text-align: right;top:7%;right:20%;">
+      <a href="#p3">
+      <p style="font-size: 20px; font-weight: 200;">Discover it now!&nbsp;
+      <img src="../resources/svg_pc/page1/button-black.svg" alt="page 1"/>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </p>
+      </a>
+    </div>
+     
+    </div>
+  </div>
+  
+  
+  <div id="p2">
+    
+    <div class="block">
+      <img class="sidebar" src="../resources/svg_pc/page2/side%20bar-blue.svg" alt="page 2"/>
+      <img class="triangles" src="../resources/svg_pc/page2/triangle-blue.svg" alt="page 2"/>
+    </div>
+    
+    <div class="content">
+      <div class="section-title"><br/>Team Members</div>
+      <hr class="section-hr"/>
+      <div class="section-content">
+        <p id="p2-p">
+	    HUANYU ZHANG
+        </p>
+        <p id="p2-p">
+            ZHAOCHENG ZHU
+        </p>
+        <p id="p2-p">
+            RUOYUAN ZHAO
+        </p>
+        <p id="p2-p">
+            YAO WANG
+        </p>
+      </div>
+    </div>
+    
+      <div class="footer">
+        <a href="#p3">
+        <img class="footer-tri" src="../resources/svg_pc/page2/button-blue.svg" alt="page 2"/>&nbsp;
+        <img class="footer-tri" src="../resources/svg_pc/page1/logo-hackpku.svg" alt="page 2"/>
+        </a>
+      </div>
+  
+  </div> 
+  
+  <div id="p3" style="position: relative">
+    
+    <div class="block">
+      <div class="sidebar" style="background-image: url(../resources/svg_pc/page3/side%20bar-orange.svg); "></div>
+      <div class="triangles" style="background-image: url(../resources/svg_pc/page3/triangle-orange.svg); "></div>
+      
+    </div>
+    
+    <div class="content">
+      <div class="section-title"><br/>Enhance a Image Now!</div>
+      <hr class="section-hr"/>
+      <div class="section-content">
+        <div style="text-align:left;">
+<form action="../upload_file.php" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input class="btn" type="file" name="file" id="file" /> 
+<br />
+<input class="btn" type="submit" name="submit" value="Submit" />
+</form>
+</div>
+      </div>  
+        
+      			
+<script type="text/javascript">
+  		  $(document).ready(function(){
+    		  
+    		  var width = $(window).width();
+    if (width <= 768) {    
+      window.location.href = "../index.html"
+    }
+}
+    </script>
+			
+
+      </div>
+      
+    </div>    
+    </div>
+</body>
+
+<script>
+      window.addEventListener("DOMContentLoaded", function() {  
+    // Grab elements, create settings, etc.  
+    var canvas = document.getElementById("canvas"),  
+        context = canvas.getContext("2d"),  
+        video = document.getElementById("video"),  
+        videoObj = { "video": true },  
+        errBack = function(error) {  
+            console.log("Video capture error: ", error.code);   
+        };  
+  
+    // Put video listeners into place  
+    if(navigator.getUserMedia) { // Standard  
+        navigator.getUserMedia(videoObj, function(stream) {  
+            video.src = stream;  
+            video.play();  
+        }, errBack);  
+    } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed  
+        navigator.webkitGetUserMedia(videoObj, function(stream){  
+            video.src = window.webkitURL.createObjectURL(stream);  
+            video.play();  
+        }, errBack);  
+    }  
+    else if(navigator.mozGetUserMedia) { // Firefox-prefixed  
+        navigator.mozGetUserMedia(videoObj, function(stream){  
+            video.src = window.URL.createObjectURL(stream);  
+            video.play();  
+        }, errBack);  
+    }  
+}, false);  
+</script> 
+<script>
+  
+  $(window).on("resize", redirect);
+  
+  function redirect(e) {
+    var width = $(window).width();
+    if (width <= 768) {    
+      window.location.href = "/index.html"
+    }
+  }
+</script>
+
+</html>

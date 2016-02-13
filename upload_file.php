@@ -5,7 +5,10 @@ if ($_FILES["file"]["error"] > 0)
   }
 else
   {
-  $filename = "output.png";
+  $filename = "output.jpg";
   move_uploaded_file($_FILES['file']['tmp_name'],$filename);
+  chmod($filename, 0777);
+echo "haha";
+$a = exec("opencv.exe");  
   }
 ?>

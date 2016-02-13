@@ -1,0 +1,480 @@
+html, body, section, .section {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+section {
+  display: block;
+  margin: auto;
+  position:static;
+//  min-height: 1000px;
+  min-height:500px;
+}
+.content-header {
+  width: 100%;
+  img {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+  }
+}
+
+.section-img1 {
+  width: 100%;
+  margin-left: 30%;
+  padding: 0px;
+  border: 0px;
+}
+.section-img2 {
+  width: 35%;
+  margin: 70px 0 0 0;
+  padding: 0px;
+  border: 0px;
+}
+
+
+@p1c1: #40B9BF;//practice is the only way to truth
+@p1c2: #F79266;//April 8th
+@p1c3: #6F6F6E;//join us now
+
+@content-text: #6F6F6E;
+@p2-emphasis: #79D8D8;
+
+@p4-emphasis: #FC7963;//HOW MUCH
+@p4-emphasis2: #F9A064;//ANY OTHER QUESTIONS
+@p4-link: #79D8D8;//send us an e-mail
+
+.background{
+  width:100%;
+  z-index:-1;
+  position:absolute;
+  margin:0px 0px;
+}
+
+.footer {
+  display: block;
+  margin: 40px auto 20px auto;
+  width: 100%;
+  text-align: right;
+  position:relative;
+  right: 20px;
+  bottom: 0px;
+  .footer-tri {
+    margin-right: 0px;
+    height: 30px;
+  }
+  .footer-text {
+    color: @content-text;
+    text-align: center;
+    font-weight: 200;
+    font-size: 16px;
+  }
+  .footer-p{
+    font-size:16px;
+    color:@p1c3;
+    margin:0 0 5px 0;
+  }
+
+}
+  .footer-p5{
+  display: block;
+  margin: -80px auto 20px auto;
+  width: 100%;
+  text-align: right;
+  position:relative;
+  right: 20px;
+  bottom: 0px;
+    .footer-tri {
+    margin-right: 0px;
+    height: 30px;
+  }
+}
+.block {
+    display: block;
+    height: 100%;
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    position: absolute;
+    .logo {
+      position: absolute;
+      left: 5px;
+      top: 20px;
+      width: 100px;
+    }
+    .sidebar {
+      display: inline-block;
+      margin: 0px;
+      border: 0px;
+      width: 110px;
+      background-repeat: repeat-y;
+      background-size: contain;
+    }
+    .triangles {
+      display: inline-block;
+      margin-top: -6px;
+      margin-left: -4px;
+      border: 0px;
+      width: 120px;
+      background-repeat: repeat-y;
+      background-size: contain;
+    }
+    .copyright {
+      position: relative;
+      left: -10px;
+      top:-80px;
+      width: 130px;
+    }
+}
+
+@media screen and (max-width:2000px) {
+  @margin: 40px;
+  @content-size:24px;
+  #p2 .section-content {
+    padding-left: 0px;
+  }
+  #p2 .content {
+    font-width:@content-size;
+    padding-left: 280px;
+    padding-right: 50px;
+  }
+  #p3 .section-content {
+    font-width:@content-size;
+    padding-left: 0px;
+  }
+  #p3 .content {
+    font-width:@content-size;
+    padding-left: 280px;
+    padding-right: 0px;
+  }
+  #p4 .sidebar,
+  #p4 .triangles {
+    height: 1360px;
+  }
+  #p4 {
+    height: 1360px - @margin;
+  }
+  #p3 .sidebar,
+  #p3 .triangles {
+    height: 600px;
+  }
+  #p3 {
+    height: 600px - @margin;
+  }
+  .header-section {
+    margin-top: 400px;
+  }
+  #p1 {
+    height: 750px;
+  }
+  #p5 .sidebar, #p5 .triangles{
+    height:1100px;
+}
+  .section-content {
+    display: block;
+    margin: 20px auto;
+    font-size: @content-size;
+    font-weight: 200;
+    color: @content-text;
+    
+    .emphasis {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .p2 {
+        color: @p2-emphasis;
+    }
+    .p4-1 {
+      color: @p4-emphasis;
+      margin: 25px auto;
+    }
+    .p4-2 {
+      color: @p4-emphasis2;
+    }
+    .p4-3 {
+      color: @p4-link;
+    }
+    
+  }
+}
+
+@media screen and (max-width:1352px) {
+  @margin: 40px;
+  @content-size:22px;
+  #p2 .section-content {
+    padding-left: 0px;
+  }
+  #p2 .content {
+    padding-left: 280px;
+    padding-right: 50px;
+  }
+  #p3 .section-content {
+    padding-left: 0px;
+  }
+  #p3 .content {
+    padding-left: 280px;
+    padding-right: 0px;
+  }
+  #p4 .sidebar,
+  #p4 .triangles {
+    height: 1260px;
+  }
+  #p4 {
+    height: 1260px - @margin;
+  }
+  #p3 .sidebar,
+  #p3 .triangles {
+    height: 960px;
+  }
+  #p3 {
+    height: 960px - @margin;
+  }
+  .header-section {
+    margin-top: 31.0625%;
+  }
+  #p1 {
+    height: 800px;
+  }
+  #p5 .sidebar, #p5 .triangles{
+    height:900px;
+}
+  .section-content {
+    display: block;
+    margin: 20px auto;
+    font-size: @content-size;
+    font-weight: 200;
+    color: @content-text;
+    
+    .emphasis {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .p2 {
+        color: @p2-emphasis;
+    }
+    .p4-1 {
+      color: @p4-emphasis;
+      margin: 25px auto;
+    }
+    .p4-2 {
+      color: @p4-emphasis2;
+    }
+    .p4-3 {
+      color: @p4-link;
+    }
+    
+  }
+}
+
+@media screen and (max-width:900px) {
+  @margin: 40px;
+  @content-size:18px;
+  #p2 .section-content {
+    padding-left: 100px;
+  }
+  #p2 .content {
+    padding-left: 320px;
+    padding-right: 110px;
+  }
+  #p3 .section-content {
+    padding-left: 80px;
+  }
+  #p3 .content {
+    padding-left: 280px;
+    padding-right: 0px;
+  }
+  #p3 .sidebar,
+  #p3 .triangles {
+    height: 640px;
+  }
+  #p4 .sidebar,
+  #p4 .triangles {
+    height: 1100px;
+  }
+  #p4 {
+    height: 1100px - @margin;
+  }
+  #p3 {
+    height: 640px - @margin;
+  }
+  .header-section {
+    margin-top: 27.935%;
+  }
+  #p1 {
+    height: 800px;
+  }
+  #p5 .sidebar, #p5 .triangles{
+    height:750px;
+}
+  .section-content {
+    display: block;
+    margin: 20px auto;
+    font-size: @content-size;
+    font-weight: 200;
+    color: @content-text;
+    
+    .emphasis {
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .p2 {
+        color: @p2-emphasis;
+    }
+    .p4-1 {
+      color: @p4-emphasis;
+      margin: 25px auto;
+    }
+    .p4-2 {
+      color: @p4-emphasis2;
+    }
+    .p4-3 {
+      color: @p4-link;
+    }
+    
+  }
+}
+
+
+.content {
+  display: block;
+  margin: auto;
+  width: 100%;
+
+  .section-title{
+    display: block;
+    margin: 40px auto 0px auto;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 32px;
+    font-weight: 400;
+    color: @content-text;
+  }
+  .section-hr {
+    display: inline-block;
+    margin: 0px 0 auto;
+    border: 0.5px solid @content-text;
+    width: 60%;
+    min-width: 300px;
+    
+  }
+  section-hr-p4{
+    display: block;
+    margin: 0px 0px;
+    border: 0.5px solid @content-text;
+    width: 40%;
+    min-width: 300px;
+    
+  }
+}
+
+.p4-link {
+  color: @p4-link;
+  text-fill-color: @p4-link;
+  text-decoration: none;
+  &:hover {
+    color: @p4-emphasis2;
+    text-fill-color: @p4-emphasis2;
+    text-decoration: none;
+  }
+}
+
+#p2-p {
+  text-indent: 30px;
+  margin: none;
+  padding: none;
+  border: none;
+}
+  
+#p4 .content {
+    padding-left: 280px;
+    padding-right: 100px;
+}
+
+ #p5 .content {
+   padding-left: 280px;
+  padding-right: 200px;
+ }
+
+#p2 {
+  height: 600px;
+}
+#p5 {
+//  height: 100%;
+  max-height: 1000px;
+}
+
+/* Title page */
+
+#p1 {
+  background-image: url("../resources/svg_pc/page1/background.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  
+  .header {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    position: absolute;
+    top: 0px;
+  }
+
+  .header-section {
+    
+    .section-hr {
+      width: 50%;
+      max-width: 500px;
+      margin: 20px 13%;
+      border: 1px solid @p1c2;
+      color:@p1c2;
+    }
+    img {
+      width: 50%;
+      max-width: 500px;
+      display: block;
+      margin: auto;
+      
+      &#header-join {
+        display: block;
+        margin: 10px auto;
+      }
+      
+      &#header-practice {
+        display: block;
+        margin: 0px 13%;
+      }
+      
+      &#header-time {
+        display: block;
+        margin: 10px 13%;
+      }
+      &.section-img1 {
+        display: block;
+        margin: 0px 13%;
+      }
+    }
+  }
+  
+  .header-logo {
+    min-width: 50px;
+    max-width: 100px;
+    width: 8%;
+    position: absolute;
+    left: 3%;
+    top: 1%;
+  }
+
+}

@@ -6,7 +6,7 @@ if ($_FILES["img"]["error"] > 0)
   }
   else{
     $folder = 'img/';
-    $filename = "output.png";
+    $filename = "output.jpg";
     move_uploaded_file($_FILES['img']['tmp_name'], $folder.$filename);
   }
 ?>

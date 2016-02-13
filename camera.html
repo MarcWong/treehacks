@@ -1,0 +1,36 @@
+<div class="container text-center">
+ <video id="video" width="640" height="480" autoplay></video></div>
+<div class="container text-center">
+ <canvas id="canvas" width="640" height="480" display="none"></canvas></div>
+<button id="btn-camera" class="btn" type="submit">Camera button</button>
+
+<div class="container text-center"><form>
+ <button class="btn" method="post" type="submit" onclick="upLoadImg();" data-toggle="popover" title="click to take a photo">Snap Photo</button></form>
+<div id="message"></div>
+
+
+    <script>    
+$("#btn-camera").click(function(){
+  $("#video").toggle(100);
+});
+function upLoadImg(){
+var p = document.getElementById("canvas");
+var c = p.getContext('2d');
+c.drawImage(video, 0, 0, 640, 480);
+var image = p.toDataURL("image/png").replace("image/png", "image/octet-stream");
+//window.location.href=image; // it will save locally 
+var FileController="file:///E:/treehacks/gateway.php";
+var form = new FormData();
+form.append("img",image);
+form.append("img","123");
+var xhr=new XMLHttpRequest();
+xhr.open("POST",FileController,true);
+xhr.send(form);
+//xhr.onload=image.display();
+//var file;
+//file= new ActiveXObject("Scripting.FileSystemObject");
+//tf = file.CreateFile("1.jpg", true);
+//tf.Write(image);
+};
+</script>
+
