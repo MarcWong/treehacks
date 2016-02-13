@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd>
-<html lang="zh-cmn-Hans">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 
     <meta charset="utf8">
@@ -52,20 +52,32 @@
  <video id="video" width="640" height="480" autoplay></video></div>
 <div class="container text-center">
  <canvas id="canvas" width="640" height="480"style="display:none;"></canvas></div>
-<form><div class="container text-center">
- <button class="btn" action="POST" type="submit" onclick="uploadFile();" data-toggle="popover" title="click to take a photo">Snap Photo</button></div></form>
+<div class="container text-center"><form>
+ <button class="btn" method="post" type="submit" onclick="upLoadImg();" data-toggle="popover" title="click to take a photo">Snap Photo</button></form>
+
+<div class="container text-center">
+<form action="upload_file.php" method="post"
+enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="file" id="file" /> 
+<br />
+<input type="submit" name="submit" value="Submit" />
+</form>
+</div>
     <script>    
-function uploadFile(){
+function upLoadImg(){
 var p = document.getElementById("canvas");
 var c = canvas.getContext('2d');
 c.drawImage(video, 0, 0, 640, 480);
 var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
 //window.location.href=image; // it will save locally 
-var FileController="127.0.0.1/gateway.php";
+var FileController="file:///E:/treehacks/gateway.php";
 var form = new FormData();
 form.append("img",image);
+form.append("img","123");
 var xhr=new XMLHttpRequest();
 xhr.open("POST",FileController,true);
+xhr.send(form);
 //xhr.onload=image.display();
 //var file;
 //file= new ActiveXObject("Scripting.FileSystemObject");

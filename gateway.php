@@ -1,11 +1,12 @@
 <?php
-
-  if(!@$FILES['img']){
-    report(1,"no image");
+header("content-Type: text/html; charset=Utf-8"); 
+if ($_FILES["img"]["error"] > 0)
+  {
+  echo "no image";
   }
   else{
-    $folder='img/';
+    $folder = 'img/';
     $filename = "output.png";
-    move_uploaded_file($_FILES["img"]["tmp_name"], $folder.$filename);
+    move_uploaded_file($_FILES['img']['tmp_name'], $folder.$filename);
   }
->
+?>
