@@ -1,36 +1,85 @@
-<div class="container text-center">
- <video id="video" width="640" height="480" autoplay></video></div>
-<div class="container text-center">
- <canvas id="canvas" width="640" height="480" display="none"></canvas></div>
-<button id="btn-camera" class="btn" type="submit">Camera button</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HACKPKU 2016 - Come and make history with us.">
+    <meta name="author" content="">
+    
+    <title>treehacks 2016</title>
+    
+    <!-- Bootstrap -->
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="resources/img/favicon.png">
+    
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- jQuery -->
+    <script src="lib/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="lib/js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="lib/js/jquery.easing.min.js"></script>
+    
+    <link href="new_pc/common.css" rel="stylesheet">
 
-<div class="container text-center"><form>
- <button class="btn" method="post" type="submit" onclick="upLoadImg();" data-toggle="popover" title="click to take a photo">Snap Photo</button></form>
-<div id="message"></div>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"style="height:600px;">
+<div style="text-align:center;">
+ <video id="video" width="640" height="480" autoplay></video>
+</div>
+<div style="text-align:center;position:relative;top:-480px;z-index:10;"><canvas id="canvas" width="640" height="480"></canvas></div>
+<div style="text-align:center;position:relative;top:-480px">
+<button class="btn btn-default btn-lg" onclick="pic();">Snap Photo</button><div class="row">
+<div style="text-align:center; padding-top:50px;">
+<a href="new_pc/index.html"><button class="btn btn-default btn-lg">back to homepage</button></a>
+</div>
+</div>  
+</div>
 
-
-    <script>    
-$("#btn-camera").click(function(){
-  $("#video").toggle(100);
-});
-function upLoadImg(){
+    <script>     
+      window.addEventListener("DOMContentLoaded", function() {  
+    // Grab elements, create settings, etc.  
+    var canvas = document.getElementById("canvas"),  
+        context = canvas.getContext("2d"),  
+        video = document.getElementById("video"),  
+        videoObj = { "video": true },  
+        errBack = function(error) {  
+            console.log("Video capture error: ", error.code);   
+        };  
+  
+    // Put video listeners into place  
+    if(navigator.getUserMedia) { // Standard  
+        navigator.getUserMedia(videoObj, function(stream) {  
+            video.src = stream;  
+            video.play();  
+        }, errBack);  
+    } else if(navigator.webkitGetUserMedia) { // WebKit-prefixed  
+        navigator.webkitGetUserMedia(videoObj, function(stream){  
+            video.src = window.webkitURL.createObjectURL(stream);  
+            video.play();  
+        }, errBack);  
+    }  
+    else if(navigator.mozGetUserMedia) { // Firefox-prefixed  
+        navigator.mozGetUserMedia(videoObj, function(stream){  
+            video.src = window.URL.createObjectURL(stream);  
+            video.play();  
+        }, errBack);  
+    }  
+}, false);  
+    </script> 
+<script> 
+function pic(){
 var p = document.getElementById("canvas");
-var c = p.getContext('2d');
+var c = canvas.getContext('2d');
 c.drawImage(video, 0, 0, 640, 480);
-var image = p.toDataURL("image/png").replace("image/png", "image/octet-stream");
-//window.location.href=image; // it will save locally 
-var FileController="file:///E:/treehacks/gateway.php";
-var form = new FormData();
-form.append("img",image);
-form.append("img","123");
-var xhr=new XMLHttpRequest();
-xhr.open("POST",FileController,true);
-xhr.send(form);
-//xhr.onload=image.display();
-//var file;
-//file= new ActiveXObject("Scripting.FileSystemObject");
-//tf = file.CreateFile("1.jpg", true);
-//tf.Write(image);
-};
+var v = document.getElementById("video");
+v.src="<div style='width:640px;height:480px;color:white;'><div>";
+}
 </script>
-
+</body>
+</html>
