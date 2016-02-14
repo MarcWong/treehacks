@@ -21,10 +21,11 @@
 $a = exec("/home/pi/webcam/webcam.sh");
 //if($a==0)echo "opencv.exe successfully executed";
 //else "opencv.exe haven't been executed";
+$b = exec("python resources/PictureMagic/main.py");
 ?>
 <div class="row">
 <div class="col-lg-6 col-lg-offset-3">
-<img src="inputcamera.jpg"></img>
+<img src="output.png"></img>
 </div>
 </div>
 <div class="row">
