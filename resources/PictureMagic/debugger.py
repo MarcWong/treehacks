@@ -1,5 +1,5 @@
 # this module rely on ipython to debug program when crash occurs
-'''import sys
+import sys
 
 class ExceptionHook:
 	instance = None
@@ -12,4 +12,3 @@ class ExceptionHook:
 		return self.instance(*args, **kwargs)
 
 sys.excepthook = ExceptionHook()
-'''

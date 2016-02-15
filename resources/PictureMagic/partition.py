@@ -55,6 +55,7 @@ def GetBestChannel(channels):
 		for x in range(channel.shape[0]):
 			for y in range(channel.shape[1]):
 				avg += channel[x][y]
+                avg /= (float(channel.shape[0]) * float(channel.shape[1]))
 		diff = 0
 		for x in range(channel.shape[0]):
 			for y in range(channel.shape[1]):

@@ -5,24 +5,32 @@ if ($_FILES["file"]["error"] > 0)
   }
 else
   {
-   $dir = "resources/PictureMagic/";
-   //$filename = date("hisa") . ".jpg";
-   $filename="input.jpg";
-   $path = $dir.$filename;
-   $light=htmlspecialchars(@$_POST['light']);
+   $dir1 = "resources/PictureMagic/";
+   $dir2 = "img/";
+   $tmp = date("hisa");
+   $light=$_POST['light'];
+   $light=1;
+   //$filename = $dir2 . $tmp . ".jpg";
+   $filename= $dir1 . "test.jpg";
+   
+   //$fileoutname = $dir2. $tmp . "out.png";
+   $fileoutname= $dir1 . "output.png";
+   
+   $parameter = $filename.",".$filename.",".$fileoutname;
+   //$path = $dir.$filename;
    //echo $filename;
-   move_uploaded_file($_FILES['file']['tmp_name'],$path);
-   chmod($path, 0777);
+   //move_uploaded_file($_FILES['file']['tmp_name'],$filename);
+   //chmod($path, 0777);
    //echo "haha";
-   //$a = exec("python resources/PictureMagic/main.py",$dir.$filename,$light);
-   $a = exec("python resources/PictureMagic/main.py");
-   if($a==0)echo "main.py successfully executed";
-   else "main.py haven't been executed";
+   //$a = exec("python resources/PictureMagic/main.py $parameter");
+   //$a = exec("python resources/PictureMagic/main.py");
+   //if($a==0)echo "main.py successfully executed";
+   //else "main.py haven't been executed";
    //$b=exec("opencv.exe");
-   while(1){
+   //while(1){
    //if (file_exists("file.txt"))
-     if (file_exists("output.png"))
-     break;
+     //if (file_exists($fileoutname))
+     //break;
    };
    
    echo "<!DOCTYPE html>
@@ -42,7 +50,7 @@ else
 <body>
 <div class='row'>
 <div class='col-lg-6 col-lg-offset-3'>
-<img src='$filename'></img>
+<img src='$fileoutname'></img>
 </div>
 </div>
 <div class='row'>
@@ -51,6 +59,5 @@ else
 </div>
 </div>
 </body>";
-  }
 
 ?>
